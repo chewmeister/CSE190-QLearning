@@ -3,9 +3,10 @@ import rospy
 import random
 from astar import astar
 from mdp import mdp
+from qlearn import qlearn
 from read_config import read_config
 from std_msgs.msg import Bool, String, Float32
-from cse_190_assi_3.msg import *
+from cse_190_assi_fpa.msg import *
 
 
 
@@ -28,19 +29,21 @@ class Robot():
 
 	def tasks(self):
 		# A*
-		intList = astar()
+		# intList = astar()
 
-		# OUTPUT
-		# Outputs the locations that must be traversed from the start to the goal including start and goal.
-		aPub = rospy.Publisher("/results/path_list",AStarPath, queue_size = (self.map_size[0]*self.map_size[1]))
-		for move in intList:
-			aPath = AStarPath()
-			aPath.data = move
-			rospy.sleep(2)
-			aPub.publish(aPath)
+		# # OUTPUT
+		# # Outputs the locations that must be traversed from the start to the goal including start and goal.
+		# aPub = rospy.Publisher("/results/path_list",AStarPath, queue_size = (self.map_size[0]*self.map_size[1]))
+		# for move in intList:
+		# 	aPath = AStarPath()
+		# 	aPath.data = move
+		# 	rospy.sleep(2)
+		# 	aPub.publish(aPath)
 
 		# MDP
-		mdp()
+		#mdp()
+
+		qlearn()
 
 
 

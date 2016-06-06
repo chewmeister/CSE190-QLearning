@@ -20,7 +20,7 @@
 
 
   "reward_for_each_step": -0.05,
-  "reward_for_hitting_wall": 0.00,
+  "reward_for_hitting_wall": -1,
   "reward_for_reaching_goal": 10.0,
   "reward_for_falling_in_pit": -10.0,
 
@@ -31,5 +31,10 @@
   "prob_move_left": 0.1,
   "prob_move_right": 0.1,
 
-  "generate_video": 1
+  "generate_video": 1,
+
+
+  "qEpsilon": 0.30,
+  "qAlpha": 0.2,
+  "qDiscount": 0.8
 }

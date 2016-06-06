@@ -2,7 +2,7 @@
 
 import rospy
 from std_msgs.msg import String, Float32, Bool
-from cse_190_assi_3.msg import AStarPath, PolicyList
+from cse_190_assi_fpa.msg import AStarPath, PolicyList
 import json
 import image_util
 from read_config import read_config

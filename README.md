@@ -1,9 +1,6 @@
 # CSE190-QLearning
 CSE190: Computational Techniques in Robotics (Final Project)
 
-#Path Planning Algorithms
+As a final project, I implementing reinforcement learning as an extension to PA3. More specifically, I am implementing Q-Learning, which can be used to find an optimal action-selection policy for any given Markov decision process. It uses an action-value function which gives the expected utility of taking a given action in a given state and following the optimal policy as a result. In this case, the probabilistic models used to solve the Markov Decision Process problem are not known and have not been learned.
 
-In this assignment you need to implement:
-
-1. **A Star Search Algorithm** - To find an efficient path from the starting position to the goal.
-2. **Value Iteration (Markov Decision Process)** - To find the optimal policy at each point in the grid, maximizing based on the rewards.
+This project utilized knowledge learned from the course, including the Robot Operating System (ROS).

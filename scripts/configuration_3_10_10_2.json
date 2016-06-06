@@ -45,5 +45,10 @@
   "prob_move_left": 0.1,
   "prob_move_right": 0.1,
 
-  "generate_video": 1
+  "generate_video": 1,
+
+  
+  "qEpsilon": 0.05,
+  "qAlpha": 0.2,
+  "qDiscount": 0.8
 }
