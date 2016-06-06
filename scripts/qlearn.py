@@ -204,9 +204,9 @@ def qlearn():
 
 		valueForMove = (1-qAlpha)*curr.getQVal(randMove) + qAlpha*maxQNext
 		curr.setQVal(randMove,valueForMove)
-		print "current state: " + str(curr.getState())
-		print "iter: " + str(iterationCount) + ", Looked at State: " + str(nextState)
-		print "qVal: " + randMove + ", value: " + str(valueForMove) + "\n"
+		# print "current state: " + str(curr.getState())
+		# print "iter: " + str(iterationCount) + ", Looked at State: " + str(nextState)
+		# print "qVal: " + randMove + ", value: " + str(valueForMove) + "\n"
 		curr.setPolicy()
 
 		(x,y) = nextState
@@ -218,7 +218,7 @@ def qlearn():
 			curr = r.choice(list(values.values()))
 			stepNum = 0
 
-		print "Next current value: " + str(curr.getState()) + "****** \n"
+		# print "Next current value: " + str(curr.getState()) + "****** \n"
 
 		for i in range(0,map_size[0]):
 			for j in range(0,map_size[1]):
