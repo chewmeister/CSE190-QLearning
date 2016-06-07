@@ -10,7 +10,7 @@ def flipCoin( p ):
     return rand < p
 
 #(1-a)*Q(A,Right) + a(R(A, Right, S') + d*max_a(Q(S',A)))
-def qlearn():
+def qlearnNoMoveProb():
 	# INPUT
 	config = read_config()
 	# Possible moves that can be made by robot: move_list
@@ -116,6 +116,14 @@ def qlearn():
 					maxQNext = rewardStep + (qDiscount*values[(x,y)].getValue())
 					nextState = newState
 			
+			# Backward
+			newState = [state[0] + 1, state[1] + 0]	
+
+			# Right
+			newState = [state[0] + 0, state[1] + 1]
+
+			# Left
+			newState = [state[0] + 0, state[1] - 1]
 
 		################ South ################
 		if( randMove == "S"):
@@ -134,6 +142,12 @@ def qlearn():
 					maxQNext = rewardStep + (qDiscount*values[(x,y)].getValue())
 					nextState = newState
 
+			# Backward
+			newState = [state[0] - 1, state[1] + 0]
+			# Right
+			newState = [state[0] + 0, state[1] - 1]
+			# Left
+			newState = [state[0] + 0, state[1] + 1]
 
 		################ East ################
 		if( randMove == "E"):
@@ -152,6 +166,12 @@ def qlearn():
 					maxQNext = rewardStep + (qDiscount*values[(x,y)].getValue())
 					nextState = newState
 
+			# Backward
+			newState = [state[0] + 0, state[1] - 1]
+			# Right
+			newState = [state[0] + 1, state[1] + 0]
+			# Left
+			newState = [state[0] - 1, state[1] + 0]
 
 		################ West ################
 		if( randMove == "W"):
@@ -169,14 +189,24 @@ def qlearn():
 				else:
 					maxQNext = rewardStep + (qDiscount*values[(x,y)].getValue())
 					nextState = newState
+			# Backward
+			newState = [state[0] + 0, state[1] + 1]
+
+
+			# Right
+			newState = [state[0] - 1, state[1] + 0]
+
+
+			# Left
+			newState = [state[0] + 1, state[1] + 0]
 
 
 
 		valueForMove = (1-qAlpha)*curr.getQVal(randMove) + qAlpha*maxQNext
 		curr.setQVal(randMove,valueForMove)
-		# print "current state: " + str(curr.getState())
-		# print "iter: " + str(iterationCount) + ", Looked at State: " + str(nextState)
-		# print "qVal: " + randMove + ", value: " + str(valueForMove) + "\n"
+		print "current state: " + str(curr.getState())
+		print "iter: " + str(iterationCount) + ", Looked at State: " + str(nextState)
+		print "qVal: " + randMove + ", value: " + str(valueForMove) + "\n"
 		curr.setPolicy()
 
 		(x,y) = nextState
@@ -188,7 +218,7 @@ def qlearn():
 			curr = r.choice(list(values.values()))
 			stepNum = 0
 
-		# print "Next current value: " + str(curr.getState()) + "****** \n"
+		print "Next current value: " + str(curr.getState()) + "****** \n"
 
 		for i in range(0,map_size[0]):
 			for j in range(0,map_size[1]):

@@ -4,6 +4,8 @@ import random
 from astar import astar
 from mdp import mdp
 from qlearn import qlearn
+from qlearnMoveProb import qlearnMoveProb
+from qlearnNoMoveProb import qlearnNoMoveProb
 from read_config import read_config
 from std_msgs.msg import Bool, String, Float32
 from cse_190_assi_fpa.msg import *
@@ -43,7 +45,14 @@ class Robot():
 		# MDP
 		#mdp()
 
-		qlearn()
+		# Q-Learning (Only activate 1)
+		#qlearn()
+
+		# Only moves forward in the correct direction
+		#qlearnNoMoveProb()
+
+		# Robot knows it has a probability of moving in another direction
+		qlearnMoveProb()
 
 
 

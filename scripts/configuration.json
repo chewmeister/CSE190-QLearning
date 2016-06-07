@@ -15,7 +15,7 @@
     [1, 3]
   ],
 
-  "max_iterations": 1000,
+  "max_iterations": 600,
   "threshold_difference": 0.00001,
 
 
@@ -36,7 +36,7 @@
 
 
   "qEpsilon": 0.5,
-  "qAlpha": 0.2,
+  "qAlpha": 0.5,
   "qDiscount": 0.8
 
 }

@@ -29,12 +29,12 @@
     [5, 7]
   ],
 
-  "max_iterations": 1000,
+  "max_iterations": 200,
   "threshold_difference": 0.00001,
 
 
   "reward_for_each_step": -0.05,
-  "reward_for_hitting_wall": -0.00,
+  "reward_for_hitting_wall": -1,
   "reward_for_reaching_goal": 5.0,
   "reward_for_falling_in_pit": -5.0,
 
